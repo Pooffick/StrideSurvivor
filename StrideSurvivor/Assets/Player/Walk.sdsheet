@@ -7,42 +7,42 @@ ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
 Packing: {}
 Sprites:
     9802c61717d906f029f1ff070b786658:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
-        TextureRegion: {X: 49, Y: 62, Width: 20, Height: 66}
+        TextureRegion: {X: 49, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     f28d2956a832738341caf217ed246175:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
-        TextureRegion: {X: 179, Y: 62, Width: 19, Height: 66}
+        TextureRegion: {X: 179, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     350c8387f7a72330801fac1a0e662bf4:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
         TextureRegion: {X: 308, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     1c85243baf11d0b9dd08bf4a44a080f5:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
-        TextureRegion: {X: 435, Y: 62, Width: 18, Height: 66}
+        TextureRegion: {X: 435, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     edad38eebbfac58efe52857d23557ff4:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
-        TextureRegion: {X: 561, Y: 62, Width: 21, Height: 66}
+        TextureRegion: {X: 561, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     2765f3745ef540bc939e938df943ac4e:
-        Source: !file ../Resources/Mage/Walk.png
+        Source: !file ../../Resources/Mage/Walk.png
         Name: Walk
         TextureRegion: {X: 688, Y: 62, Width: 26, Height: 66}
         Center: {X: 0.0, Y: 0.0}

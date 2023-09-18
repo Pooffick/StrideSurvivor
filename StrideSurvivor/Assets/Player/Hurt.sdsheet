@@ -1,0 +1,29 @@
+!SpriteSheet
+Id: 9c8181f6-5bb3-4469-bb4f-3cc47b2762cb
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    c9f33035d203bdebd02a0034afa731ae:
+        Source: !file ../../Resources/Mage/Hurt.png
+        Name: Hurt
+        TextureRegion: {X: 34, Y: 77, Width: 30, Height: 51}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    92ad41abb6a91f692f068853157e4463:
+        Source: !file ../../Resources/Mage/Hurt.png
+        Name: Hurt
+        TextureRegion: {X: 160, Y: 76, Width: 32, Height: 52}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6413f9a4defbb0ef280763d55a0a297c:
+        Source: !file ../../Resources/Mage/Hurt.png
+        Name: Hurt
+        TextureRegion: {X: 290, Y: 77, Width: 30, Height: 51}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

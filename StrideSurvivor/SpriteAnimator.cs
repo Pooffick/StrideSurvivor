@@ -14,12 +14,15 @@ namespace StrideSurvivor
     {
         private SpriteComponent _sprite;
         private string _currentAnimation;
-        private CancellationTokenSource _cts = new CancellationTokenSource();
+        private CancellationTokenSource _cts = new();
 
         public Dictionary<string, SpriteAnimation> Animations { get; private set; } = new();
 
         [DataMemberRange(0.0, 10.0, 0.01, 1.0, 2)]
         public float AnimationSpeed = 1f;
+
+        [DataMemberIgnore]
+        public bool IsPlaying { get; private set; }
 
         public override void Start()
         {
@@ -30,6 +33,13 @@ namespace StrideSurvivor
                 if (animation.EndFrame == -1)
                     animation.EndFrame = animation.SpriteSheet.Sprites.Count - 1;
             }
+        }
+
+        public void Stop()
+        {
+            _cts.Cancel();
+            _currentAnimation = null;
+            IsPlaying = false;
         }
 
         public async void Play(string name)
@@ -53,13 +63,13 @@ namespace StrideSurvivor
         {
             var sprite = _sprite.SpriteProvider as SpriteFromSheet;
             sprite.Sheet = animation.SpriteSheet;
-            sprite.CurrentFrame = animation.StartFrame;
 
             int delay = (int)(animation.Delay / AnimationSpeed);
 
-            while (animation.Loop && !token.IsCancellationRequested)
+            IsPlaying = true;
+            do
             {
-                for (int i = animation.StartFrame + 1; i <= animation.EndFrame; i++)
+                for (int i = animation.StartFrame; i <= animation.EndFrame; i++)
                 {
                     if (token.IsCancellationRequested)
                         break;
@@ -67,7 +77,9 @@ namespace StrideSurvivor
                     sprite.CurrentFrame = i;
                     await Task.Delay(delay);
                 }
-            }
+            } while (animation.Loop && !token.IsCancellationRequested);
+
+            IsPlaying = animation.Loop; // Because I do not wait for the end of the old task, there is no need to change IsPlaying.
         }
     }
 

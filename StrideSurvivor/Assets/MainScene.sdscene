@@ -9,6 +9,7 @@ Hierarchy:
         - ref!! 134d9cac-0de9-44a0-8973-ec5aaabd684a
         - ref!! cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
         - ref!! 00760ffb-c336-4821-80af-b3b885056539
+        - ref!! 9909b7e0-ee3e-4935-8ce6-f7f3870e1ae8
         - ref!! 3b6fa7d0-61be-4265-b2a4-f185153de637
     Parts:
         -   Entity:
@@ -40,41 +41,92 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: f7f7e479-19f8-41cf-adbb-16eadb7ea1c9
+                    50d53e27ad4ec310ad09bf0b7a1258b4: !StrideSurvivor.CameraController,StrideSurvivor
+                        Id: baf399a3-ea10-40b3-bc28-ff99832a4145
+                        Player: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
+                        Offset: {X: 0.0, Y: 0.0, Z: 5.0}
         -   Entity:
                 Id: 3b6fa7d0-61be-4265-b2a4-f185153de637
                 Name: Player
                 Components:
                     fa30dccdb0b99b936dc7880b67086cd8: !TransformComponent
                         Id: 2ce05442-6866-41e1-bca6-23ac779bdc14
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Position: {X: 0.035324946, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     8fde36bfa88924bd93dd2280b24cd88e: !SpriteComponent
                         Id: d7088280-c6cb-4951-a92a-5da7c05e50dc
                         SpriteProvider: !SpriteFromSheet
-                            Sheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Idle
+                            Sheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Player/Idle
                         Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
                         Sampler: PointClamp
                     f08991279b40df01832eb980e1d1999e: !StrideSurvivor.Player.PlayerController,StrideSurvivor
                         Id: cbda6755-0cf3-4342-a5e8-b9b8e3777a5a
                         Priority: 1
+                        MovementSpeed: 40.0
                     2185bc68a1b6344e7c5c15f389373b8b: !StrideSurvivor.SpriteAnimator,StrideSurvivor
                         Id: 79eee99f-6d4d-41a2-b17a-846a995daa8a
                         AnimationSpeed: 1.0
                         Animations:
                             ce848c61ab9d4075de0ba7aa0796c5d8~Idle:
-                                SpriteSheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Idle
+                                SpriteSheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Player/Idle
                                 StartFrame: 0
                                 EndFrame: -1
                                 Delay: 100
                                 Loop: true
                             532b187c98352826205dd689d2224d14~Walk:
-                                SpriteSheet: ce64f25c-3acc-44de-9f74-9d152ce26241:Walk
+                                SpriteSheet: ce64f25c-3acc-44de-9f74-9d152ce26241:Player/Walk
                                 StartFrame: 0
                                 EndFrame: -1
                                 Delay: 100
                                 Loop: true
+                            f6d3782b99d93e713ca998b4c764dd1a~Hurt:
+                                SpriteSheet: 9c8181f6-5bb3-4469-bb4f-3cc47b2762cb:Player/Hurt
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: false
+                            b0e3927adda75c858520ceb1f4f5d671~Dead:
+                                SpriteSheet: 2414eb60-5fd2-4bbf-8b7d-f58bcd024ee4:Player/Dead
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: false
+                    9df40398bb15ed5696d40bdb3fff5220: !CharacterComponent
+                        Id: 5e94835c-014f-4da3-9fc4-1f1409960a67
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        FallSpeed: 10.0
+                        MaxSlope: {Radians: 0.7853982}
+                        JumpSpeed: 0.0
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        ColliderShapes:
+                            e0576d9179c7b94c947501cbdbf677a2: !CapsuleColliderShapeDesc
+                                Is2D: true
+                                Length: 0.4
+                                Radius: 0.15
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+        -   Entity:
+                Id: 9909b7e0-ee3e-4935-8ce6-f7f3870e1ae8
+                Name: Enemy
+                Components:
+                    f96bb1ecf3bd0065d5de492e206ef951: !TransformComponent
+                        Id: 9d122408-0a55-44a5-aa60-d3a34d3762b1
+                        Position: {X: -0.63417244, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    2a2d768f306e2745bb753fdda2583ae7: !SpriteComponent
+                        Id: dbd601ea-a172-4052-82ae-ee0caf257bd0
+                        SpriteProvider: !SpriteFromSheet
+                            Sheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Player/Idle
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
         -   Entity:
                 Id: cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
                 Name: Directional light

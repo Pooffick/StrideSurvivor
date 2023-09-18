@@ -1,0 +1,50 @@
+!SpriteSheet
+Id: 2414eb60-5fd2-4bbf-8b7d-f58bcd024ee4
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    92778c5d594e8701f26d5be9f4a19eb9:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 28, Y: 71, Width: 36, Height: 57}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    5502d821c52a7b091c454c7c3db568f8:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 158, Y: 72, Width: 34, Height: 56}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    f11ad0b3851ab891026f0a7d3ec93c6f:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 285, Y: 74, Width: 35, Height: 54}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    956a87ca1ec3f82d11820fd9a62eb983:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 415, Y: 74, Width: 38, Height: 54}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    204964626b394a1100a3960416506b2a:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 543, Y: 74, Width: 54, Height: 54}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    266314d2522fd9c034c21442c35612e6:
+        Source: !file ../../Resources/Mage/Dead.png
+        Name: Dead
+        TextureRegion: {X: 671, Y: 74, Width: 62, Height: 54}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

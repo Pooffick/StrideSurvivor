@@ -7,51 +7,51 @@ ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
 Packing: {}
 Sprites:
     e32b97b915c34a21f04e942742a1d1c8:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 36, Y: 62, Width: 28, Height: 66}
+        TextureRegion: {X: 34, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     75456cee344af39bf132f1d427e985d7:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 164, Y: 62, Width: 28, Height: 66}
+        TextureRegion: {X: 162, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     1792d29791fb73fb04a54afd9aa3cd7d:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 289, Y: 62, Width: 31, Height: 66}
+        TextureRegion: {X: 289, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     103d9c9f59de3d770af0dcd16d2998c8:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
         TextureRegion: {X: 417, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     8ae5cca06db15bb941dc4fdbca7d5827:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 545, Y: 62, Width: 31, Height: 66}
+        TextureRegion: {X: 545, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     63d06a8b76e328bf5557d36ef33b4141:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 673, Y: 62, Width: 31, Height: 66}
+        TextureRegion: {X: 673, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
     8e48248d41661c1a856e4d0d7f9e922d:
-        Source: !file ../Resources/Mage/Idle.png
+        Source: !file ../../Resources/Mage/Idle.png
         Name: Idle
-        TextureRegion: {X: 804, Y: 62, Width: 28, Height: 66}
+        TextureRegion: {X: 802, Y: 62, Width: 33, Height: 66}
         Center: {X: 0.0, Y: 0.0}
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
         BorderColor: {R: 0, G: 0, B: 0, A: 0}
