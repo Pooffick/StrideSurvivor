@@ -8,32 +8,31 @@ Hierarchy:
     RootParts:
         - ref!! 134d9cac-0de9-44a0-8973-ec5aaabd684a
         - ref!! cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
-        - ref!! 921cbe77-a40d-463c-bac7-722a6cf584d4
-        - ref!! b34412eb-7c42-48aa-8c07-5a262c3b0347
-        - ref!! 008507af-e3d7-4e83-a68f-cab858016703
+        - ref!! 00760ffb-c336-4821-80af-b3b885056539
+        - ref!! 3b6fa7d0-61be-4265-b2a4-f185153de637
     Parts:
         -   Entity:
-                Id: 008507af-e3d7-4e83-a68f-cab858016703
-                Name: Sphere
+                Id: 00760ffb-c336-4821-80af-b3b885056539
+                Name: Background
                 Components:
-                    c54619f994e2bc50d1f0ff58318dcc6d: !TransformComponent
-                        Id: 8149ac28-e216-4e22-8af3-732d95cc23ed
-                        Position: {X: 0.0, Y: 0.5, Z: 0.0}
+                    0995889d85fa5bc668378ad3228ede86: !TransformComponent
+                        Id: 2c4e342e-f18c-4db5-bede-736a3de01d27
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    828322554fe323d90de6b452b24f9d98: !ModelComponent
-                        Id: 2c552d44-606b-40de-a5db-66975650f0e2
-                        Model: a2ee5182-99e5-41dc-9f63-8cacdc1c7ef9:Sphere
-                        Materials: {}
+                    f074287cfd8e9bdba6660ea8aeca9a1e: !BackgroundComponent
+                        Id: 5c017059-47af-4c83-b74b-3d9e9b65c147
+                        Texture: 1f94e988-3e08-4d32-9f19-53232e033726:Background
+                        Is2D: true
         -   Entity:
                 Id: 134d9cac-0de9-44a0-8973-ec5aaabd684a
                 Name: Camera
                 Components:
                     ba0ca1f27c91a2d934fd83aa14f5edf4: !TransformComponent
                         Id: b15bcc16-47c3-428e-bd85-91bacaa2f619
-                        Position: {X: 2.6, Y: 0.6, Z: -1.0}
-                        Rotation: {X: 0.0, Y: 0.82903755, Z: 0.0, W: 0.5591929}
+                        Position: {X: 0.0, Y: 0.0, Z: 5.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     9054188218ebeda9f3ecc3a4291bd02d: !CameraComponent
@@ -41,46 +40,41 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: f7f7e479-19f8-41cf-adbb-16eadb7ea1c9
-                    bf208fd6f71caeee6c204a5cb0feea6b: !StrideSurvivor.BasicCameraController,StrideSurvivor
-                        Id: 538d5bf8-5062-4723-90e8-fe7e2781a581
-                        Gamepad: false
-                        KeyboardMovementSpeed: {X: 5.0, Y: 5.0, Z: 5.0}
-                        TouchMovementSpeed: {X: 0.7, Y: 0.7, Z: 0.3}
-                        SpeedFactor: 5.0
-                        KeyboardRotationSpeed: {X: 3.0, Y: 3.0}
-                        MouseRotationSpeed: {X: 1.0, Y: 1.0}
-                        TouchRotationSpeed: {X: 1.0, Y: 0.7}
         -   Entity:
-                Id: 921cbe77-a40d-463c-bac7-722a6cf584d4
-                Name: Skybox
+                Id: 3b6fa7d0-61be-4265-b2a4-f185153de637
+                Name: Player
                 Components:
-                    ab8ddc3382c2546439090495ae66062b: !TransformComponent
-                        Id: b26e98bc-c43e-4036-84a0-0c3992c278a6
-                        Position: {X: 0.0, Y: 2.0, Z: -2.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    532ea1681dd6b397043687de77be410d: !BackgroundComponent
-                        Id: bbcba554-75af-4866-be56-446c2021a3a9
-                        Texture: 4d8f3e8a-ddb0-40b6-a405-e841523e8890:Skybox texture
-                    bb17d8dd313fa5ec5a4515cb025d2780: !LightComponent
-                        Id: e6b3ad5d-e0e1-41a5-bee1-a16956346b9a
-                        Type: !LightSkybox
-                            Skybox: 68f13761-bde6-4c95-9827-885ce691c78b:Skybox
-        -   Entity:
-                Id: b34412eb-7c42-48aa-8c07-5a262c3b0347
-                Name: Ground
-                Components:
-                    26b08e6f96f07a4938659f4bb231d564: !TransformComponent
-                        Id: d76aedda-1d12-4fdb-8230-f9cda1f4a947
+                    fa30dccdb0b99b936dc7880b67086cd8: !TransformComponent
+                        Id: 2ce05442-6866-41e1-bca6-23ac779bdc14
                         Position: {X: 0.0, Y: 0.0, Z: 0.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    69fd1fcc538fa97d147d22271f9dd471: !ModelComponent
-                        Id: 4ae21746-def4-46ed-8551-5b3dae7a9d16
-                        Model: ff5f7725-1e85-40b4-825f-c2d658952284:Ground
-                        Materials: {}
+                    8fde36bfa88924bd93dd2280b24cd88e: !SpriteComponent
+                        Id: d7088280-c6cb-4951-a92a-5da7c05e50dc
+                        SpriteProvider: !SpriteFromSheet
+                            Sheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Idle
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                        Sampler: PointClamp
+                    f08991279b40df01832eb980e1d1999e: !StrideSurvivor.Player.PlayerController,StrideSurvivor
+                        Id: cbda6755-0cf3-4342-a5e8-b9b8e3777a5a
+                        Priority: 1
+                    2185bc68a1b6344e7c5c15f389373b8b: !StrideSurvivor.SpriteAnimator,StrideSurvivor
+                        Id: 79eee99f-6d4d-41a2-b17a-846a995daa8a
+                        AnimationSpeed: 1.0
+                        Animations:
+                            ce848c61ab9d4075de0ba7aa0796c5d8~Idle:
+                                SpriteSheet: 63f4f8e4-9e54-433b-a947-a99a5f065d7f:Idle
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: true
+                            532b187c98352826205dd689d2224d14~Walk:
+                                SpriteSheet: ce64f25c-3acc-44de-9f74-9d152ce26241:Walk
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: true
         -   Entity:
                 Id: cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
                 Name: Directional light

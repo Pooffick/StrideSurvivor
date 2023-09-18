@@ -1,8 +1,7 @@
 !Texture
-Id: 4d8f3e8a-ddb0-40b6-a405-e841523e8890
+Id: 1f94e988-3e08-4d32-9f19-53232e033726
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../Resources/skybox_texture_hdr.dds
+Source: !file ../Resources/FieldsTile_38.png
 Type: !ColorTextureType
-    UseSRgbSampling: false
     ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
