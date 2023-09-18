@@ -1,0 +1,11 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrideSurvivor.Windows", "StrideSurvivor.Windows\StrideSurvivor.Windows.csproj", "{5132FDEF-A94B-42DC-89DB-2FF4F2819EE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrideSurvivor", "StrideSurvivor\StrideSurvivor.csproj", "{D5C26F6A-6698-4872-921C-4C13B3B2CE57}"
+EndProject
+Global
+EndGlobal
