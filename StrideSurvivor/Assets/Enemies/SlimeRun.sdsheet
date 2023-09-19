@@ -1,0 +1,57 @@
+!SpriteSheet
+Id: 1ebdd75a-85c0-4da0-9a7d-efa06476c057
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    4f979da390c3a6d7fc2320bef2a49ae0:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 29, Y: 97, Width: 59, Height: 31}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    f88b4ede2a4307f3cfeca7f0f69416f7:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 154, Y: 99, Width: 59, Height: 29}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    4931a1c2372b011e1d567a79f670f96d:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 283, Y: 101, Width: 59, Height: 27}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6363565023f03fe8e9478ff0a729da2c:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 412, Y: 103, Width: 59, Height: 25}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    fe785f45a418391f6fa5c878987efe3a:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 540, Y: 98, Width: 59, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    ba642ceba7f6ea15f996f6cd31203a04:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 668, Y: 96, Width: 59, Height: 32}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6d3e5c47f617660f012b56449fbc9c42:
+        Source: !file ../../Resources/Enemies/SlimeRun.png
+        Name: SlimeRun
+        TextureRegion: {X: 796, Y: 94, Width: 59, Height: 34}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

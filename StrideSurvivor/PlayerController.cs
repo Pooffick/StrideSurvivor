@@ -14,16 +14,16 @@ namespace StrideSurvivor.Player
 
     public class PlayerController : SyncScript
     {
-        private TransformComponent _transform;
         private SpriteAnimator _animator;
         private CharacterComponent _character;
-        private PlayerState _currentState = PlayerState.Alive;
 
         public float MovementSpeed = 15f;
+        public int HP = 10;
+
+        public PlayerState CurrentState { get; private set; } = PlayerState.Alive;
 
         public override void Start()
         {
-            _transform = Entity.Transform;
             _animator = Entity.Get<SpriteAnimator>();
             _character = Entity.Get<CharacterComponent>();
 
@@ -32,15 +32,24 @@ namespace StrideSurvivor.Player
 
         public override void Update()
         {
-            if (_currentState == PlayerState.Dead)
-                return;
-
-            if (_currentState == PlayerState.Hurt)
+            switch (CurrentState)
             {
-                if (!_animator.IsPlaying)
-                    _currentState = PlayerState.Alive;
+                case PlayerState.Dead:
+                    return;
+                case PlayerState.Hurt:
+                    if (!_animator.IsPlaying)
+                        CurrentState = PlayerState.Alive;
+                    break;
+                default:
+                    CheckCollisions();
+                    break;
             }
 
+            Move();
+        }
+
+        private void Move()
+        {
             float deltaTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
             var direction = new Vector3();
 
@@ -58,41 +67,61 @@ namespace StrideSurvivor.Player
             if (Input.IsKeyDown(Keys.A))
             {
                 direction.X = -1;
-                _transform.Scale.X = -1; // Is there an easier way to flip the sprite?
+                Entity.Transform.Scale.X = -1; // Is there an easier way to flip the sprite?
             }
             else
             if (Input.IsKeyDown(Keys.D))
             {
                 direction.X = 1;
-                _transform.Scale.X = 1;
+                Entity.Transform.Scale.X = 1;
             }
-
-            ////////
-            if (Input.IsKeyDown(Keys.E))
-            {
-                _currentState = PlayerState.Dead;
-                _character.SetVelocity(Vector3.Zero);
-                _animator.Play("Dead");
-            }
-
-            if (Input.IsKeyDown(Keys.Q))
-            {
-                _currentState = PlayerState.Hurt;
-                _animator.Play("Hurt");
-            }
-            ////////
 
             direction.Normalize();
             direction *= MovementSpeed * deltaTime;
 
             _character.SetVelocity(direction);
 
-            if (_currentState == PlayerState.Alive)
+            if (CurrentState == PlayerState.Alive)
             {
                 if (direction == Vector3.Zero)
                     _animator.Play("Idle");
                 else
                     _animator.Play("Walk");
+            }
+        }
+
+        private void CheckCollisions()
+        {
+            bool any = false;
+            foreach (Collision collision in _character.Collisions)
+            {
+                var otherCollider = collision.ColliderA == _character ? collision.ColliderB : collision.ColliderA;
+
+                var enemy = otherCollider.Entity.Get<SimpleEnemy>();
+                if (enemy != null && !enemy.Dying)
+                {
+                    CrowdController.Instance.DestroyEnemy(enemy);
+                    any = true;
+                }
+            }
+
+            if (any)
+                TakeDamage();
+        }
+
+        private void TakeDamage()
+        {
+            HP--;
+            if (HP <= 0)
+            {
+                CurrentState = PlayerState.Dead;
+                _character.SetVelocity(Vector3.Zero);
+                _animator.Play("Dead");
+            }
+            else
+            {
+                CurrentState = PlayerState.Hurt;
+                _animator.Play("Hurt");
             }
         }
     }

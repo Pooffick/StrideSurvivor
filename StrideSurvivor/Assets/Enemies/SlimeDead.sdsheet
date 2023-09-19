@@ -1,0 +1,43 @@
+!SpriteSheet
+Id: bae81397-ff65-4671-b011-20d2013833c8
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    49d99655c179937d5722b740dfb4759c:
+        Source: !file ../../Resources/Enemies/SlimeDead.png
+        Name: SlimeDead
+        TextureRegion: {X: 29, Y: 97, Width: 80, Height: 31}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    c754f02671f9c6109fd742f715433086:
+        Source: !file ../../Resources/Enemies/SlimeDead.png
+        Name: SlimeDead
+        TextureRegion: {X: 155, Y: 95, Width: 80, Height: 33}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    fec03954263753012b49912894efe301:
+        Source: !file ../../Resources/Enemies/SlimeDead.png
+        Name: SlimeDead
+        TextureRegion: {X: 282, Y: 93, Width: 80, Height: 35}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    1d41dafa15c5baf854e537a07b7ef3ef:
+        Source: !file ../../Resources/Enemies/SlimeDead.png
+        Name: SlimeDead
+        TextureRegion: {X: 410, Y: 93, Width: 80, Height: 35}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    aa33607e6a5037054c40ffda4a5500b4:
+        Source: !file ../../Resources/Enemies/SlimeDead.png
+        Name: SlimeDead
+        TextureRegion: {X: 500, Y: 85, Width: 80, Height: 43}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

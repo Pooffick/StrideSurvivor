@@ -1,0 +1,64 @@
+!PrefabAsset
+Id: 50dfd5c8-2336-4c33-adee-42d2e2cf2f3b
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! e2e63a51-0d81-42fe-9fca-06d7020d54bf
+    Parts:
+        -   Entity:
+                Id: e2e63a51-0d81-42fe-9fca-06d7020d54bf
+                Name: Slime
+                Components:
+                    f96bb1ecf3bd0065d5de492e206ef951: !TransformComponent
+                        Id: ea3cb6ec-0081-46e1-ad3b-ea917365ec8c
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    2a2d768f306e2745bb753fdda2583ae7: !SpriteComponent
+                        Id: 5227c9e0-dfb3-45f6-aa51-93afe7c0c0a5
+                        SpriteProvider: !SpriteFromSheet
+                            Sheet: 1ebdd75a-85c0-4da0-9a7d-efa06476c057:Enemies/SlimeRun
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                        Sampler: PointClamp
+                    533415105df8b6fa846d65bc6c3285fa: !StrideSurvivor.SpriteAnimator,StrideSurvivor
+                        Id: bf48d240-0e6a-4e97-8b09-bf14963f753f
+                        AnimationSpeed: 1.0
+                        Animations:
+                            c2e64d6d0b2e5098119223007b3eb9e1~Run:
+                                SpriteSheet: 1ebdd75a-85c0-4da0-9a7d-efa06476c057:Enemies/SlimeRun
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: true
+                            7481a83b3f4d19d12f8dcb1dbc5416a3~Dead:
+                                SpriteSheet: bae81397-ff65-4671-b011-20d2013833c8:Enemies/SlimeDead
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 50
+                                Loop: false
+                    9d10418813a2e65cc41d8e65f4b11278: !StrideSurvivor.SimpleEnemy,StrideSurvivor
+                        Id: 863d4cf0-f480-4252-801c-eec7ad5dd016
+                        MovementSpeed: 25.0
+                    172c6b3cb77f84e1916c8c817dac79bf: !RigidbodyComponent
+                        Id: 97eeb30d-2b0d-40d4-83d4-e4f3f5c12854
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: false
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: true
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            47c87ced9f0485561bfb8dbac5e76762: !SphereColliderShapeDesc
+                                Is2D: true
+                                Radius: 0.25
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
