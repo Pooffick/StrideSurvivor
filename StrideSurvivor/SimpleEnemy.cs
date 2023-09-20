@@ -8,7 +8,7 @@ using Stride.Physics;
 
 namespace StrideSurvivor
 {
-    public class SimpleEnemy : StartupScript
+    public class SimpleEnemy : StartupScript, IDamageable
     {
         private RigidbodyComponent _rigidbody;
         private SpriteAnimator _animator;
@@ -19,6 +19,9 @@ namespace StrideSurvivor
 
         public float MovementSpeed = 30f;
 
+        public int HP = 10;
+        public int Damage = 1;
+
         public bool Dying { get; private set; } = false;
 
         public override void Start()
@@ -28,6 +31,14 @@ namespace StrideSurvivor
 
             _initialized = true;
             _animator.Play("Run");
+        }
+
+        public void TakeDamage(int damage)
+        {
+            HP -= damage;
+
+            if (HP <= 0)
+                CrowdController.Instance.DestroyEnemy(this);
         }
 
         public async Task Die()

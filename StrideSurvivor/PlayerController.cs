@@ -12,7 +12,7 @@ namespace StrideSurvivor.Player
         Dead
     }
 
-    public class PlayerController : SyncScript
+    public class PlayerController : SyncScript, IDamageable
     {
         private SpriteAnimator _animator;
         private CharacterComponent _character;
@@ -46,6 +46,25 @@ namespace StrideSurvivor.Player
             }
 
             Move();
+        }
+
+        public void TakeDamage(int damage)
+        {
+            if (CurrentState != PlayerState.Alive)
+                return;
+
+            HP -= damage;
+            if (HP <= 0)
+            {
+                CurrentState = PlayerState.Dead;
+                _character.SetVelocity(Vector3.Zero);
+                _animator.Play("Dead");
+            }
+            else
+            {
+                CurrentState = PlayerState.Hurt;
+                _animator.Play("Hurt");
+            }
         }
 
         private void Move()
@@ -92,7 +111,6 @@ namespace StrideSurvivor.Player
 
         private void CheckCollisions()
         {
-            bool any = false;
             foreach (Collision collision in _character.Collisions)
             {
                 var otherCollider = collision.ColliderA == _character ? collision.ColliderB : collision.ColliderA;
@@ -101,27 +119,8 @@ namespace StrideSurvivor.Player
                 if (enemy != null && !enemy.Dying)
                 {
                     CrowdController.Instance.DestroyEnemy(enemy);
-                    any = true;
+                    TakeDamage(enemy.Damage);
                 }
-            }
-
-            if (any)
-                TakeDamage();
-        }
-
-        private void TakeDamage()
-        {
-            HP--;
-            if (HP <= 0)
-            {
-                CurrentState = PlayerState.Dead;
-                _character.SetVelocity(Vector3.Zero);
-                _animator.Play("Dead");
-            }
-            else
-            {
-                CurrentState = PlayerState.Hurt;
-                _animator.Play("Hurt");
             }
         }
     }

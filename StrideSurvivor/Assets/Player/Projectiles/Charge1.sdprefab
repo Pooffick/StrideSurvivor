@@ -1,0 +1,72 @@
+!PrefabAsset
+Id: 37695be3-7954-45a6-8fde-f35ccdb5255b
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! 5fb98044-1b7d-45ec-b390-b512152a3e03
+    Parts:
+        -   Entity:
+                Id: 42b28ef2-4ede-4aed-b49d-b21342845b2b
+                Name: ChargeObject
+                Components:
+                    ac5657b4bdc88c085598e5b20a937d17: !TransformComponent
+                        Id: 4c15276b-92a8-400c-b6a7-c8cf778ffbae
+                        Position: {X: 0.26496232, Y: 0.0, Z: 0.1}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    ee08cf8a218bcb8bee2e80dcb65b0492: !SpriteComponent
+                        Id: 76b5ad31-6515-4067-b265-07a030e82c39
+                        SpriteProvider: !SpriteFromSheet
+                            Sheet: aa47e0cb-b277-4e9d-b49c-b09c6430150b:Player/Projectiles/Charge_1
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                        Sampler: PointClamp
+                    0d61fa519d6f52910acfcc1e67864b89: !StrideSurvivor.SpriteAnimator,StrideSurvivor
+                        Id: 9e5fb1e9-085b-46ae-a74d-8e76b7270960
+                        AnimationSpeed: 1.0
+                        Animations:
+                            1a1e04732f5c9e7d0efc2a8b63eb8c0c~Charge:
+                                SpriteSheet: aa47e0cb-b277-4e9d-b49c-b09c6430150b:Player/Projectiles/Charge_1
+                                StartFrame: 0
+                                EndFrame: -1
+                                Delay: 100
+                                Loop: false
+                    e1560cf9c739edec6163e4b9a88ec540: !RigidbodyComponent
+                        Id: facdca6c-71a7-4a58-ac39-35a1eb4bb380
+                        CanCollideWith: DefaultFilter, StaticFilter, KinematicFilter, DebrisFilter, SensorTrigger, CustomFilter1, CustomFilter2, CustomFilter3, CustomFilter4, CustomFilter5, CustomFilter6, CustomFilter7, CustomFilter8, CustomFilter9, CustomFilter10
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: false
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: true
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            29d2143240dc1e638958f0c28d9e31cb: !SphereColliderShapeDesc
+                                Is2D: true
+                                Radius: 0.15
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                    81f796a83b0083e83da4b7ea743a30d4: !StrideSurvivor.SimpleProjectile,StrideSurvivor
+                        Id: efb67c36-cf08-4431-a624-2ae88127f298
+                        Damage: 10
+                        Cooldown: 2.0
+                        Active: false
+        -   Entity:
+                Id: 5fb98044-1b7d-45ec-b390-b512152a3e03
+                Name: Charge1
+                Components:
+                    5187e079298e0463b7c1e5a313b5cd26: !TransformComponent
+                        Id: 3d73103b-af71-4473-a738-2e4a485c6166
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            30c8e1098130240da23c4eaff39f2f3d: ref!! 4c15276b-92a8-400c-b6a7-c8cf778ffbae

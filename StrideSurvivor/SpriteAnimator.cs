@@ -27,6 +27,8 @@ namespace StrideSurvivor
         public override void Start()
         {
             _sprite = Entity.Get<SpriteComponent>();
+            _currentAnimation = null;
+            IsPlaying = false;
 
             foreach (SpriteAnimation animation in Animations.Values)
             {

@@ -1,0 +1,71 @@
+!SpriteSheet
+Id: aa47e0cb-b277-4e9d-b49c-b09c6430150b
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    16030ffc982e34a6fb31d0820881e100:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 20, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    06175b1dfbf755e4a2177df7ee99fdaf:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 82, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    fd9caf6a11c6e48febe3a64636369cad:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 147, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    cfab1045d77312899cfaca510db6a5cd:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 203, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    f4d652df792e2d48f7d04927e4918dbb:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 267, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    396e4be67e30332becd7987a33ce8373:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 331, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    c704dfbd402fbbfc552ba9e31f7ef47f:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 398, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    72eb35247286cb7311a85234a822241c:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 459, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    595b0054849e5d0ca8210876602a3469:
+        Source: !file ../../../Resources/Mage/Charge_1.png
+        Name: Charge_1
+        TextureRegion: {X: 510, Y: 42, Width: 50, Height: 46}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

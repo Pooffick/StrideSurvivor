@@ -78,7 +78,7 @@ namespace StrideSurvivor
             int count = _random.Next(SpawnRange.X, SpawnRange.Y);
             for (int i = 0; i <= count; i++)
             {
-                var entities = SimpleEnemyPrefab.Instantiate();
+                var entity = SimpleEnemyPrefab.Instantiate()[0]; // Should be single
 
                 bool horizontal = _random.Next(2) == 0;
                 float x = horizontal ? MathUtil.Lerp(-SpawnBox.X, SpawnBox.X, _random.NextSingle())
@@ -88,14 +88,10 @@ namespace StrideSurvivor
 
                 var position = _playerPosition + new Vector3(x, y, 0);
 
-                // Should be single
-                foreach (Entity entity in entities)
-                {
-                    Entity.AddChild(entity);
-                    entity.Transform.Position = position;
-                    entity.Get<RigidbodyComponent>().UpdatePhysicsTransformation();
-                    _simpleEnemies.Add(entity.Get<SimpleEnemy>());
-                }
+                Entity.AddChild(entity);
+                entity.Transform.Position = position;
+                entity.Get<RigidbodyComponent>().UpdatePhysicsTransformation();
+                _simpleEnemies.Add(entity.Get<SimpleEnemy>());
             }
         }
     }

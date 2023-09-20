@@ -41,8 +41,11 @@ Hierarchy:
                     9d10418813a2e65cc41d8e65f4b11278: !StrideSurvivor.SimpleEnemy,StrideSurvivor
                         Id: 863d4cf0-f480-4252-801c-eec7ad5dd016
                         MovementSpeed: 25.0
+                        HP: 10
+                        Damage: 1
                     172c6b3cb77f84e1916c8c817dac79bf: !RigidbodyComponent
                         Id: 97eeb30d-2b0d-40d4-83d4-e4f3f5c12854
+                        CollisionGroup: CustomFilter1
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5

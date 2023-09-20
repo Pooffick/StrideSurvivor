@@ -9,6 +9,7 @@ Hierarchy:
         - ref!! 134d9cac-0de9-44a0-8973-ec5aaabd684a
         - ref!! cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
         - ref!! 00760ffb-c336-4821-80af-b3b885056539
+        - ref!! 7b0d2338-f7b5-47ad-b993-12af0686f209
         - ref!! 3b6fa7d0-61be-4265-b2a4-f185153de637
         - ref!! c30df0f5-a442-4c5a-9064-4bc1781bbb3a
     Parts:
@@ -96,6 +97,7 @@ Hierarchy:
                                 Loop: false
                     9df40398bb15ed5696d40bdb3fff5220: !CharacterComponent
                         Id: 5e94835c-014f-4da3-9fc4-1f1409960a67
+                        CollisionGroup: CharacterFilter
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -113,6 +115,21 @@ Hierarchy:
                                 Radius: 0.15
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+        -   Entity:
+                Id: 7b0d2338-f7b5-47ad-b993-12af0686f209
+                Name: PlayerProjectileController
+                Components:
+                    fdb60e75725aa5c32602a51773d623d3: !TransformComponent
+                        Id: 59e6cb52-dfcd-45b1-bf1e-ea7b4f60128f
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    392b4c874bbc30bfd27af06cd4c615f1: !StrideSurvivor.Player.ProjectileController,StrideSurvivor
+                        Id: ecd5f33c-f238-499e-a09d-03cfd4156caa
+                        DefaultProjectile: 37695be3-7954-45a6-8fde-f35ccdb5255b:Player/Projectiles/Charge1
+                        Camera: ref!! a6d535be-3352-4739-9da2-5738a397e6c0
+                        Target: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
         -   Entity:
                 Id: c30df0f5-a442-4c5a-9064-4bc1781bbb3a
                 Name: CrowdController
