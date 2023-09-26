@@ -1,4 +1,5 @@
 using Stride.Engine;
+using Stride.Games;
 
 namespace StrideSurvivor
 {
@@ -6,10 +7,14 @@ namespace StrideSurvivor
     {
         static void Main(string[] args)
         {
-            using (var game = new Game())
-            {
-                game.Run();
-            }
+            using var game = new Game();
+            game.WindowCreated += OnGameWindowCreated;
+            game.Run();
+        }
+
+        private static void OnGameWindowCreated(object sender, System.EventArgs e)
+        {
+            (sender as Game).Window.AllowUserResizing = true;
         }
     }
 }

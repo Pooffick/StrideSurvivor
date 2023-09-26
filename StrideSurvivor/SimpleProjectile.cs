@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
-using BulletSharp;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
-using Stride.Graphics;
 using Stride.Physics;
 
 namespace StrideSurvivor
 {
     public class SimpleProjectile : SyncScript
     {
-        private static readonly Vector3 Up = new(0, 0, 1);
+        private bool _initialized = false;
+        private Vector3 _offsetPosition;
+        private Quaternion _offsetRotation;
         private RigidbodyComponent _rigidbody;
         private SpriteAnimator _animator;
         private TransformComponent _parentTransform;
@@ -22,19 +21,26 @@ namespace StrideSurvivor
         public bool Active = false;
 
         [DataMemberIgnore]
-        public Vector3 Target;
+        public Vector2 Target;
 
         public static Action<SimpleProjectile> Finished;
 
         public override void Start()
         {
-            _rigidbody = Entity.Get<RigidbodyComponent>();
-            _parentTransform = Entity.GetParent().Transform;
+            if (!_initialized)
+            {
+                _offsetPosition = Entity.Transform.Position;
+                _offsetRotation = Entity.Transform.Rotation;
+                _rigidbody = Entity.Get<RigidbodyComponent>();
+                _parentTransform = Entity.GetParent().Transform;
+                _initialized = true;
+            }
 
-            var direction = Target - _parentTransform.WorldMatrix.TranslationVector;
+            var direction = new Vector3(Target, 0f);
             direction.Normalize();
-            DebugText.Print(direction.ToString(), new Int2(200, 50), Color.Red, TimeSpan.FromMilliseconds(100)); // TODO!!!
-            _parentTransform.Rotation = Quaternion.LookRotation(direction, Up);
+            _parentTransform.Rotation = Quaternion.BetweenDirections(-Vector3.UnitX, direction);
+            Entity.Transform.Rotation = _offsetRotation;
+            Entity.Transform.Position = _offsetPosition;
             _rigidbody.UpdatePhysicsTransformation();
 
             _animator = Entity.Get<SpriteAnimator>();
@@ -47,8 +53,7 @@ namespace StrideSurvivor
             if (!Active)
                 return;
 
-            _parentTransform.Position = Vector3.Zero;
-            _rigidbody.UpdatePhysicsTransformation();
+            DebugText.Print(Entity.Transform.Position.ToString(), new Int2(200, 20), Color.Wheat);
 
             CheckCollisions();
 

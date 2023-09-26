@@ -12,7 +12,7 @@ Hierarchy:
                 Components:
                     ac5657b4bdc88c085598e5b20a937d17: !TransformComponent
                         Id: 4c15276b-92a8-400c-b6a7-c8cf778ffbae
-                        Position: {X: 0.26496232, Y: 0.0, Z: 0.1}
+                        Position: {X: 0.3, Y: 0.0, Z: 0.1}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -24,7 +24,7 @@ Hierarchy:
                         Sampler: PointClamp
                     0d61fa519d6f52910acfcc1e67864b89: !StrideSurvivor.SpriteAnimator,StrideSurvivor
                         Id: 9e5fb1e9-085b-46ae-a74d-8e76b7270960
-                        AnimationSpeed: 1.0
+                        AnimationSpeed: 1.5
                         Animations:
                             1a1e04732f5c9e7d0efc2a8b63eb8c0c~Charge:
                                 SpriteSheet: aa47e0cb-b277-4e9d-b49c-b09c6430150b:Player/Projectiles/Charge_1

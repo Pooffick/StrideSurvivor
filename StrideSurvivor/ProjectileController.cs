@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SharpDX.MediaFoundation;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Graphics;
+using Stride.Input;
+using Stride.Physics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace StrideSurvivor.Player
@@ -47,21 +50,23 @@ namespace StrideSurvivor.Player
                 {
                     projectile.Target = mousePosition;
                     _availableProjectiles[projectile] += projectile.Cooldown;
-                    Entity.AddChild(projectile.Entity.GetParent());
+                    var parentEntity = projectile.Entity.GetParent();
+                    parentEntity.Transform.Position = Entity.Transform.Position;
+                    Entity.Scene.Entities.Add(parentEntity);
                 }
             }
         }
 
         private void OnProjectileFinished(SimpleProjectile projectile)
         {
-            Entity.RemoveChild(projectile.Entity.GetParent());
+            Entity.Scene.Entities.Remove(projectile.Entity.GetParent());
         }
 
-        private Vector3 GetMousePosition()
+        private Vector2 GetMousePosition()
         {
             var backBuffer = GraphicsDevice.Presenter.BackBuffer;
-            var viewport = new Viewport(0, 0, backBuffer.Width, backBuffer.Height);
-            return viewport.Unproject(new Vector3(Input.AbsoluteMousePosition, Camera.Entity.Transform.Position.Z), Camera.ProjectionMatrix, Camera.ViewMatrix, Matrix.Identity);
+            return new Vector2(backBuffer.Width / 2f - Input.AbsoluteMousePosition.X,
+                Input.AbsoluteMousePosition.Y - backBuffer.Height / 2f);
         }
     }
 }

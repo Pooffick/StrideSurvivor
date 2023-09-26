@@ -1,0 +1,71 @@
+!SpriteSheet
+Id: 8470ee9d-f8f4-4970-875a-80ce8f0b2df0
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    47be022b9ea265aab8382c4ec7afc87c:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 21, Y: 18, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    97d18ef0ca41d57973388468985eb07e:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 87, Y: 18, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    7a8b2c4f1a80fba7ec7dcae0b1830e4b:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 150, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    dc599b9f9ce09173fc0e3f4602e0abea:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 213, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    faf0c8a345a1a8530ed6d8497f1420dd:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 277, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    4abe93cbe3f1164ffc6ba81648737aaa:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 341, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    bcb7547373e02aa6ea858d6af29c9844:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 405, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    3a5d68fa129bbf322eeb0bf40bd976ee:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 469, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    12850b7da6af9817bc4ec3fba588521f:
+        Source: !file ../../../Resources/Mage/Charge_Lightning.png
+        Name: Charge_Lightning
+        TextureRegion: {X: 533, Y: 16, Width: 21, Height: 30}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

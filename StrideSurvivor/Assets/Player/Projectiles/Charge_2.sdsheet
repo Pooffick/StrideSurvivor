@@ -1,0 +1,50 @@
+!SpriteSheet
+Id: 5f8b71d0-7117-4c6a-b8ad-9af59464aea7
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    c6692946b1f792c25c0166df51a5946d:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 29, Y: 61, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    6c1304b7821a4f723ffcc5814657a27d:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 89, Y: 60, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    1c9828ccce1c63974044b9e97145b7f9:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 151, Y: 60, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    b0c69902b9283386ef2d96ff2a843585:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 213, Y: 60, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    2373243506fe21fe07184bb3cff4e738:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 278, Y: 60, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
+    5aff4ccd5f886f82b8a15cbbb7dad643:
+        Source: !file ../../../Resources/Mage/Charge_2.png
+        Name: Charge_2
+        TextureRegion: {X: 341, Y: 60, Width: 28, Height: 6}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}
