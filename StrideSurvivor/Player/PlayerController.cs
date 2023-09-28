@@ -2,6 +2,7 @@
 using Stride.Engine;
 using Stride.Physics;
 using Stride.Core.Mathematics;
+using StrideSurvivor.Enemy;
 
 namespace StrideSurvivor.Player
 {
@@ -115,7 +116,7 @@ namespace StrideSurvivor.Player
             {
                 var otherCollider = collision.ColliderA == _character ? collision.ColliderB : collision.ColliderA;
 
-                var enemy = otherCollider.Entity.Get<SimpleEnemy>();
+                var enemy = otherCollider.Entity.Get<BaseEnemy>();
                 if (enemy != null && !enemy.Dying)
                 {
                     CrowdController.Instance.DestroyEnemy(enemy);

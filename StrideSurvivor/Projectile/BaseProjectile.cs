@@ -5,25 +5,26 @@ using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Physics;
 
-namespace StrideSurvivor
+namespace StrideSurvivor.Projectile
 {
-    public class SimpleProjectile : SyncScript
+    public class BaseProjectile : SyncScript
     {
-        private bool _initialized = false;
-        private Vector3 _offsetPosition;
-        private Quaternion _offsetRotation;
-        private RigidbodyComponent _rigidbody;
-        private SpriteAnimator _animator;
-        private TransformComponent _parentTransform;
+        protected bool _initialized = false;
+        protected Vector3 _offsetPosition;
+        protected Quaternion _offsetRotation;
+        protected RigidbodyComponent _rigidbody;
+        protected SpriteAnimator _animator;
+        protected TransformComponent _parentTransform;
 
         public int Damage = 10;
         public float Cooldown = 2f;
-        public bool Active = false;
 
         [DataMemberIgnore]
-        public Vector2 Target;
+        public bool Active = false;
+        [DataMemberIgnore]
+        public PossibleTargets Target;
 
-        public static Action<SimpleProjectile> Finished;
+        public static Action<BaseProjectile> Finished;
 
         public override void Start()
         {
@@ -36,9 +37,7 @@ namespace StrideSurvivor
                 _initialized = true;
             }
 
-            var direction = new Vector3(Target, 0f);
-            direction.Normalize();
-            _parentTransform.Rotation = Quaternion.BetweenDirections(-Vector3.UnitX, direction);
+            _parentTransform.Rotation = Quaternion.BetweenDirections(-Vector3.UnitX, GetTarget());
             Entity.Transform.Rotation = _offsetRotation;
             Entity.Transform.Position = _offsetPosition;
             _rigidbody.UpdatePhysicsTransformation();
@@ -53,19 +52,27 @@ namespace StrideSurvivor
             if (!Active)
                 return;
 
-            DebugText.Print(Entity.Transform.Position.ToString(), new Int2(200, 20), Color.Wheat);
-
             CheckCollisions();
 
             if (!_animator.IsPlaying)
             {
-                Active = false;
-                _animator.Stop();
-                Finished?.Invoke(this);
+                Finish();
             }
         }
 
-        private void CheckCollisions()
+        protected void Finish()
+        {
+            Active = false;
+            _animator.Stop();
+            Finished?.Invoke(this);
+        }
+
+        protected virtual Vector3 GetTarget()
+        {
+            return Target.MouseDirection;
+        }
+
+        protected virtual void CheckCollisions()
         {
             foreach (Collision collision in _rigidbody.Collisions)
             {

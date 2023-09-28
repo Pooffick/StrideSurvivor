@@ -1,7 +1,7 @@
 ﻿using Stride.Core.Mathematics;
 using Stride.Engine;
 
-namespace StrideSurvivor
+namespace StrideSurvivor.Player
 {
     public class CameraController : SyncScript
     {

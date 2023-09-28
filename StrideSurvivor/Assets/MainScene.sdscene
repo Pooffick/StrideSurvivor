@@ -42,8 +42,8 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: f7f7e479-19f8-41cf-adbb-16eadb7ea1c9
-                    9af2451b977e6bc3dc6bece61be76535: !StrideSurvivor.CameraController,StrideSurvivor
-                        Id: baf399a3-ea10-40b3-bc28-ff99832a4145
+                    23b47c34c42353f0a7bb758b76f020fe: !StrideSurvivor.Player.CameraController,StrideSurvivor
+                        Id: 8aa4bfcf-f594-4d6f-8c33-09ad37eb3408
                         Player: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
                         Offset: {X: 0.0, Y: 0.0, Z: 5.0}
         -   Entity:
@@ -128,8 +128,9 @@ Hierarchy:
                     392b4c874bbc30bfd27af06cd4c615f1: !StrideSurvivor.Player.ProjectileController,StrideSurvivor
                         Id: ecd5f33c-f238-499e-a09d-03cfd4156caa
                         DefaultProjectile: 37695be3-7954-45a6-8fde-f35ccdb5255b:Player/Projectiles/Charge1
+                        SingleTargetProjectile: e2edfbd4-e404-4cd5-9668-df2f26c2031f:Player/Projectiles/Charge2
                         Camera: ref!! a6d535be-3352-4739-9da2-5738a397e6c0
-                        Target: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
+                        Player: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
         -   Entity:
                 Id: c30df0f5-a442-4c5a-9064-4bc1781bbb3a
                 Name: CrowdController
@@ -140,13 +141,13 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    5491904ab1cff595a5f3afbac89f6d8a: !StrideSurvivor.CrowdController,StrideSurvivor
-                        Id: 261271e8-de95-4624-9fdf-8c4a2dabd1ba
+                    f1cb5178d74189f169b45ebefc2c8bac: !StrideSurvivor.Enemy.CrowdController,StrideSurvivor
+                        Id: c0b98e4a-4fe1-43a4-9837-e4dc742433ed
                         SimpleEnemyPrefab: 50dfd5c8-2336-4c33-adee-42d2e2cf2f3b:Enemies/Slime
                         Player: ref!! cbda6755-0cf3-4342-a5e8-b9b8e3777a5a
-                        SpawnTime: 10
-                        SpawnRange: {X: 1, Y: 4}
-                        SpawnBox: {X: 5.0, Y: 3.0}
+                        SpawnTime: 5
+                        SpawnRange: {X: 2, Y: 4}
+                        SpawnBox: {X: 6.0, Y: 3.0}
         -   Entity:
                 Id: cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
                 Name: Directional light

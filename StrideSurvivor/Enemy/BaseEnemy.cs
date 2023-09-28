@@ -1,14 +1,12 @@
-﻿using System.Net.NetworkInformation;
-using System.Threading.Tasks;
-using BulletSharp;
+﻿using System.Threading.Tasks;
 using Stride.Core;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Physics;
 
-namespace StrideSurvivor
+namespace StrideSurvivor.Enemy
 {
-    public class SimpleEnemy : StartupScript, IDamageable
+    public class BaseEnemy : StartupScript, IDamageable
     {
         private RigidbodyComponent _rigidbody;
         private SpriteAnimator _animator;

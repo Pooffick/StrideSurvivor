@@ -6,12 +6,13 @@ using System.Collections.Generic;
 using Stride.Physics;
 using System.Linq;
 using StrideSurvivor.Player;
+using Stride.Core;
 
-namespace StrideSurvivor
+namespace StrideSurvivor.Enemy
 {
     public class CrowdController : AsyncScript
     {
-        private readonly List<SimpleEnemy> _simpleEnemies = new();
+        private readonly List<BaseEnemy> _enemies = new();
         private readonly Random _random = new(DateTime.Now.Second);
         private float _spawnTimer = 0;
         private float _deltatTime;
@@ -22,6 +23,9 @@ namespace StrideSurvivor
         public int SpawnTime = 10;
         public Int2 SpawnRange = new(1, 5);
         public Vector2 SpawnBox = new(10, 5);
+
+        [DataMemberIgnore]
+        public IEnumerable<BaseEnemy> Enemies => _enemies;
 
         public static CrowdController Instance { get; private set; }
 
@@ -50,17 +54,17 @@ namespace StrideSurvivor
             }
         }
 
-        public async void DestroyEnemy(SimpleEnemy enemy)
+        public async void DestroyEnemy(BaseEnemy enemy)
         {
             await enemy.Die();
-            _simpleEnemies.Remove(enemy);
+            _enemies.Remove(enemy);
             Entity.RemoveChild(enemy.Entity);
         }
 
         private void Mover()
         {
             // TODO: maybe chunks better?
-            _simpleEnemies.AsParallel().ForAll(enemy =>
+            _enemies.AsParallel().ForAll(enemy =>
             {
                 if (enemy.Dying)
                     return;
@@ -91,7 +95,7 @@ namespace StrideSurvivor
                 Entity.AddChild(entity);
                 entity.Transform.Position = position;
                 entity.Get<RigidbodyComponent>().UpdatePhysicsTransformation();
-                _simpleEnemies.Add(entity.Get<SimpleEnemy>());
+                _enemies.Add(entity.Get<BaseEnemy>());
             }
         }
     }

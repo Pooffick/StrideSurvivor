@@ -38,11 +38,6 @@ Hierarchy:
                                 EndFrame: -1
                                 Delay: 50
                                 Loop: false
-                    9d10418813a2e65cc41d8e65f4b11278: !StrideSurvivor.SimpleEnemy,StrideSurvivor
-                        Id: 863d4cf0-f480-4252-801c-eec7ad5dd016
-                        MovementSpeed: 25.0
-                        HP: 10
-                        Damage: 1
                     172c6b3cb77f84e1916c8c817dac79bf: !RigidbodyComponent
                         Id: 97eeb30d-2b0d-40d4-83d4-e4f3f5c12854
                         CollisionGroup: CustomFilter1
@@ -65,3 +60,8 @@ Hierarchy:
                                 Is2D: true
                                 Radius: 0.25
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                    7e94155c7417f8a9ed7e6407b612afe2: !StrideSurvivor.Enemy.BaseEnemy,StrideSurvivor
+                        Id: 879dff2a-e9fc-4bcd-bcc3-3ef7e6f69623
+                        MovementSpeed: 30.0
+                        HP: 10
+                        Damage: 1

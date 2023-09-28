@@ -1,41 +1,52 @@
 !PrefabAsset
-Id: 37695be3-7954-45a6-8fde-f35ccdb5255b
+Id: e2edfbd4-e404-4cd5-9668-df2f26c2031f
 SerializedVersion: {Stride: 3.1.0.1}
 Tags: []
 Hierarchy:
     RootParts:
-        - ref!! 5fb98044-1b7d-45ec-b390-b512152a3e03
+        - ref!! cb37f091-8cf3-4881-a99e-959e8a1697b0
     Parts:
         -   Entity:
-                Id: 42b28ef2-4ede-4aed-b49d-b21342845b2b
+                Id: cb37f091-8cf3-4881-a99e-959e8a1697b0
+                Name: Charge2
+                Components:
+                    5187e079298e0463b7c1e5a313b5cd26: !TransformComponent
+                        Id: 9a89ee7e-1155-43bd-a7d1-988fc9b63410
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children:
+                            30c8e1098130240da23c4eaff39f2f3d: ref!! e4d6bd2d-e196-428c-ac3b-436aefa39938
+        -   Entity:
+                Id: e0450b30-bd94-455a-80bd-026fe9e1d818
                 Name: ChargeObject
                 Components:
                     ac5657b4bdc88c085598e5b20a937d17: !TransformComponent
-                        Id: 4c15276b-92a8-400c-b6a7-c8cf778ffbae
-                        Position: {X: 0.3, Y: 0.0, Z: 0.1}
+                        Id: e4d6bd2d-e196-428c-ac3b-436aefa39938
+                        Position: {X: 0.0, Y: 0.0, Z: 0.1}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
                     ee08cf8a218bcb8bee2e80dcb65b0492: !SpriteComponent
-                        Id: 76b5ad31-6515-4067-b265-07a030e82c39
+                        Id: 41fcb9fc-bb1a-48ee-9f3b-a2d2f20e8b14
                         SpriteProvider: !SpriteFromSheet
-                            Sheet: aa47e0cb-b277-4e9d-b49c-b09c6430150b:Player/Projectiles/Charge_1
+                            Sheet: 5f8b71d0-7117-4c6a-b8ad-9af59464aea7:Player/Projectiles/Charge_2
                         Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
                         Sampler: PointClamp
                     0d61fa519d6f52910acfcc1e67864b89: !StrideSurvivor.SpriteAnimator,StrideSurvivor
-                        Id: 9e5fb1e9-085b-46ae-a74d-8e76b7270960
-                        AnimationSpeed: 1.5
+                        Id: 223e3f78-62c8-4647-a19d-30560536320d
+                        AnimationSpeed: 1.2
                         Animations:
                             1a1e04732f5c9e7d0efc2a8b63eb8c0c~Charge:
-                                SpriteSheet: aa47e0cb-b277-4e9d-b49c-b09c6430150b:Player/Projectiles/Charge_1
+                                SpriteSheet: 5f8b71d0-7117-4c6a-b8ad-9af59464aea7:Player/Projectiles/Charge_2
                                 StartFrame: 0
                                 EndFrame: -1
                                 Delay: 100
                                 Loop: false
                     e1560cf9c739edec6163e4b9a88ec540: !RigidbodyComponent
-                        Id: facdca6c-71a7-4a58-ac39-35a1eb4bb380
+                        Id: bc7988e5-e55a-47fc-8040-e64a0b2b9943
                         CollisionGroup: CustomFilter5
-                        CanCollideWith: DefaultFilter, StaticFilter, KinematicFilter, DebrisFilter, SensorTrigger, CustomFilter1, CustomFilter2, CustomFilter3, CustomFilter4, CustomFilter5, CustomFilter6, CustomFilter7, CustomFilter8, CustomFilter9, CustomFilter10
+                        CanCollideWith: DefaultFilter, StaticFilter, KinematicFilter, DebrisFilter, SensorTrigger, CustomFilter1, CustomFilter2, CustomFilter3, CustomFilter4, CustomFilter6, CustomFilter7, CustomFilter8, CustomFilter9, CustomFilter10
                         CanSleep: false
                         Restitution: 0.0
                         Friction: 0.5
@@ -55,18 +66,8 @@ Hierarchy:
                                 Is2D: true
                                 Radius: 0.15
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
-                    6155fb157de7de266eb2143f8587e2d4: !StrideSurvivor.Projectile.BaseProjectile,StrideSurvivor
-                        Id: 11f89abc-aea4-441c-b6fe-458326e8ecdd
-                        Damage: 10
-                        Cooldown: 2.0
-        -   Entity:
-                Id: 5fb98044-1b7d-45ec-b390-b512152a3e03
-                Name: Charge1
-                Components:
-                    5187e079298e0463b7c1e5a313b5cd26: !TransformComponent
-                        Id: 3d73103b-af71-4473-a738-2e4a485c6166
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children:
-                            30c8e1098130240da23c4eaff39f2f3d: ref!! 4c15276b-92a8-400c-b6a7-c8cf778ffbae
+                    87fb91d60c608e71386f299e04fdc602: !StrideSurvivor.Projectile.SingleTargetProjectile,StrideSurvivor
+                        Id: b5adceeb-2aec-4885-a416-9167f9a93b7b
+                        Damage: 4
+                        Cooldown: 1.2
+                        Speed: 50.0
