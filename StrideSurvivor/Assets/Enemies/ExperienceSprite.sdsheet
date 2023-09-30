@@ -1,0 +1,15 @@
+!SpriteSheet
+Id: 86673d13-9d56-4294-9120-ba28debdd15c
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Type: Sprite2D
+ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+Packing: {}
+Sprites:
+    5cb22baf22b8a3d98bc744b2d35d173d:
+        Source: !file ../../Resources/Experience.png
+        Name: Experience
+        TextureRegion: {X: 3, Y: 3, Width: 10, Height: 10}
+        Center: {X: 0.0, Y: 0.0}
+        Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        BorderColor: {R: 0, G: 0, B: 0, A: 0}

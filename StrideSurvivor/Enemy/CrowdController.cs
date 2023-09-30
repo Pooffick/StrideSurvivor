@@ -19,6 +19,8 @@ namespace StrideSurvivor.Enemy
         private Vector3 _playerPosition;
 
         public Prefab SimpleEnemyPrefab;
+        public Prefab ExperiencePrefab;
+
         public PlayerController Player;
         public int SpawnTime = 10;
         public Int2 SpawnRange = new(1, 5);
@@ -54,11 +56,24 @@ namespace StrideSurvivor.Enemy
             }
         }
 
-        public async void DestroyEnemy(BaseEnemy enemy)
+        public async void DestroyEnemy(BaseEnemy enemy, bool withExperience = true)
         {
             await enemy.Die();
             _enemies.Remove(enemy);
             Entity.RemoveChild(enemy.Entity);
+
+            if (withExperience)
+                SpawnExperience(enemy.Position, enemy.Experience);
+        }
+
+        private void SpawnExperience(Vector3 centerPosition, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                var entity = ExperiencePrefab.Instantiate()[0]; // Should be single
+                entity.Transform.Position = centerPosition + new Vector3((float)_random.NextDouble() / 2f, (float)_random.NextDouble() / 2f, 0);
+                Entity.AddChild(entity);
+            }
         }
 
         private void Mover()

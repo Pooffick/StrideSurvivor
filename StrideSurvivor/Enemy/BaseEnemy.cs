@@ -19,6 +19,7 @@ namespace StrideSurvivor.Enemy
 
         public int HP = 10;
         public int Damage = 1;
+        public int Experience = 1;
 
         public bool Dying { get; private set; } = false;
 
@@ -33,6 +34,9 @@ namespace StrideSurvivor.Enemy
 
         public void TakeDamage(int damage)
         {
+            if (Dying)
+                return;
+
             HP -= damage;
 
             if (HP <= 0)

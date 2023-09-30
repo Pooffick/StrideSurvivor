@@ -14,7 +14,8 @@ namespace StrideSurvivor
 
         private static void OnGameWindowCreated(object sender, System.EventArgs e)
         {
-            (sender as Game).Window.AllowUserResizing = true; // TODO: not working properly with "AdaptBackBufferToScreen"
+            var game = (Game)sender;
+            game.Window.AllowUserResizing = true; // TODO: not working properly with "AdaptBackBufferToScreen" but it adapts anyway?
         }
     }
 }

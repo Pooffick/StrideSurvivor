@@ -21,14 +21,10 @@ namespace StrideSurvivor.Player
         public override void Start()
         {
             BaseProjectile.Finished += OnProjectileFinished;
+            LevelManager.LevelChanged += OnPlayerLevelChanged;
 
             var entity = DefaultProjectile.Instantiate()[0];
             var projectile = entity.GetChild(0).Get<BaseProjectile>(); // TODO: change hierarchy
-            _availableProjectiles.Add(projectile, projectile.Cooldown);
-
-            // TODO: leveling
-            entity = SingleTargetProjectile.Instantiate()[0];
-            projectile = entity.GetChild(0).Get<BaseProjectile>(); // TODO: change hierarchy
             _availableProjectiles.Add(projectile, projectile.Cooldown);
         }
 
@@ -78,6 +74,14 @@ namespace StrideSurvivor.Player
         private void OnProjectileFinished(BaseProjectile projectile)
         {
             Entity.Scene.Entities.Remove(projectile.Entity.GetParent());
+        }
+
+        private void OnPlayerLevelChanged()
+        {
+            // TODO: show screen with selection
+            var entity = SingleTargetProjectile.Instantiate()[0];
+            var projectile = entity.GetChild(0).Get<BaseProjectile>(); // TODO: change hierarchy
+            _availableProjectiles.Add(projectile, projectile.Cooldown);
         }
 
         private Vector2 GetMousePositionRelativeToScreenCenter()

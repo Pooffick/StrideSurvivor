@@ -24,7 +24,7 @@ namespace StrideSurvivor.Projectile
         [DataMemberIgnore]
         public PossibleTargets Target;
 
-        public static Action<BaseProjectile> Finished;
+        public static event Action<BaseProjectile> Finished;
 
         public override void Start()
         {

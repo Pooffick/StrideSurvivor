@@ -17,9 +17,12 @@ namespace StrideSurvivor.Player
     {
         private SpriteAnimator _animator;
         private CharacterComponent _character;
+        private RigidbodyComponent _rigidbody; // is there any other way to use the trigger?
 
         public float MovementSpeed = 15f;
         public int HP = 10;
+
+        public LevelManager LevelManager { get; } = new LevelManager();
 
         public PlayerState CurrentState { get; private set; } = PlayerState.Alive;
 
@@ -27,6 +30,7 @@ namespace StrideSurvivor.Player
         {
             _animator = Entity.Get<SpriteAnimator>();
             _character = Entity.Get<CharacterComponent>();
+            _rigidbody = Entity.Get<RigidbodyComponent>();
 
             _animator.Play("Idle");
         }
@@ -119,8 +123,20 @@ namespace StrideSurvivor.Player
                 var enemy = otherCollider.Entity.Get<BaseEnemy>();
                 if (enemy != null && !enemy.Dying)
                 {
-                    CrowdController.Instance.DestroyEnemy(enemy);
+                    CrowdController.Instance.DestroyEnemy(enemy, withExperience: false);
                     TakeDamage(enemy.Damage);
+                }
+            }
+
+            foreach (Collision collision in _rigidbody.Collisions) // collisions don't work
+            {
+                var otherCollider = collision.ColliderA == _rigidbody ? collision.ColliderB : collision.ColliderA;
+                
+                if (otherCollider.Entity.Name == "Experience")
+                {
+                    // TODO: add animation
+                    otherCollider.Entity.SetParent(null);
+                    LevelManager.AddExperience();
                 }
             }
         }

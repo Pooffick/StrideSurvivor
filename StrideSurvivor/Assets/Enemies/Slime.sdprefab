@@ -62,6 +62,7 @@ Hierarchy:
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                     7e94155c7417f8a9ed7e6407b612afe2: !StrideSurvivor.Enemy.BaseEnemy,StrideSurvivor
                         Id: 879dff2a-e9fc-4bcd-bcc3-3ef7e6f69623
-                        MovementSpeed: 30.0
+                        MovementSpeed: 20.0
                         HP: 10
                         Damage: 1
+                        Experience: 1
