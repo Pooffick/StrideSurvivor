@@ -13,6 +13,7 @@ namespace StrideSurvivor.Enemy
     public class CrowdController : AsyncScript
     {
         private readonly List<BaseEnemy> _enemies = new();
+        private readonly List<TransformComponent> _experiencePoints = new();
         private readonly Random _random = new(DateTime.Now.Second);
         private float _spawnTimer = 0;
         private float _deltatTime;
@@ -25,9 +26,10 @@ namespace StrideSurvivor.Enemy
         public int SpawnTime = 10;
         public Int2 SpawnRange = new(1, 5);
         public Vector2 SpawnBox = new(10, 5);
+        public float ExperienceCollectSpeed = 10f;
 
         [DataMemberIgnore]
-        public IEnumerable<BaseEnemy> Enemies => _enemies;
+        public IList<BaseEnemy> Enemies => _enemies;
 
         public static CrowdController Instance { get; private set; }
 
@@ -51,6 +53,7 @@ namespace StrideSurvivor.Enemy
                 }
 
                 Mover();
+                ExperienceCollector();
 
                 await Script.NextFrame();
             }
@@ -71,9 +74,37 @@ namespace StrideSurvivor.Enemy
             for (int i = 0; i < count; i++)
             {
                 var entity = ExperiencePrefab.Instantiate()[0]; // Should be single
-                entity.Transform.Position = centerPosition + new Vector3((float)_random.NextDouble() / 2f, (float)_random.NextDouble() / 2f, 0);
+                entity.Transform.Position = centerPosition + new Vector3((float)_random.NextDouble() / 2f, (float)_random.NextDouble() / 2f, -0.1f);
                 Entity.AddChild(entity);
+                _experiencePoints.Add(entity.Transform);
             }
+        }
+
+        private void ExperienceCollector()
+        {
+            // TODO: maybe chunks better?
+            _experiencePoints.ToArray().AsParallel().ForAll(experience =>
+            {
+                var position = experience.Position;
+                float distanceToPlayer = Vector3.Distance(position, _playerPosition);
+                if (distanceToPlayer > Player.ExperienceCollectDistance)
+                    return;
+
+                var direction = _playerPosition - position;
+                direction.Normalize();
+                direction *= _deltatTime * ExperienceCollectSpeed;
+
+                position += direction;
+
+                experience.Position = position;
+
+                if (Vector3.Distance(position, _playerPosition) <= 0.1f)
+                {
+                    _experiencePoints.Remove(experience);
+                    Entity.RemoveChild(experience.Entity);
+                    Player.LevelManager.AddExperience();
+                }
+            });
         }
 
         private void Mover()

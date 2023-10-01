@@ -7,5 +7,6 @@ namespace StrideSurvivor.Projectile
         public Vector3 MouseDirection { get; set; }
         public Vector3 ClosestEnemyDirection { get; set; }
         public Vector3 ClosestEnemyPosition { get; set; }
+        public Vector3 RandomEnemyPosition { get; set; }
     }
 }

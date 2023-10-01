@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using Stride.Graphics;
@@ -11,6 +12,7 @@ namespace StrideSurvivor.Player
     public class ProjectileController : SyncScript
     {
         private readonly Dictionary<BaseProjectile, float> _availableProjectiles = new();
+        private bool _secondProjectileActive = false; // TODO: remove, added for test
 
         public Prefab DefaultProjectile;
         public Prefab SingleTargetProjectile;
@@ -34,10 +36,10 @@ namespace StrideSurvivor.Player
 
             float time = (float)Game.UpdateTime.Total.TotalSeconds;
 
-            CastSimpleProjectile(time);
+            CastProjectiles(time);
         }
 
-        private void CastSimpleProjectile(float time)
+        private void CastProjectiles(float time)
         {
             var mousePosition = GetMousePositionRelativeToScreenCenter();
             var mouseDirection = new Vector3(mousePosition, 0);
@@ -51,23 +53,21 @@ namespace StrideSurvivor.Player
             {
                 MouseDirection = mouseDirection,
                 ClosestEnemyDirection = enemyDirection,
-                ClosestEnemyPosition = enemyPosition
+                ClosestEnemyPosition = enemyPosition,
+                RandomEnemyPosition = GetRandomEnemyPosition()
             };
 
             foreach (BaseProjectile projectile in _availableProjectiles.Keys)
             {
-                if (projectile.Active)
+                var nextTime = _availableProjectiles[projectile];
+                if (projectile.Active || nextTime > time)
                     continue;
 
-                var lastTime = _availableProjectiles[projectile];
-                if (lastTime <= time)
-                {
-                    projectile.Target = possibleTargets;
-                    _availableProjectiles[projectile] += projectile.Cooldown;
-                    var parentEntity = projectile.Entity.GetParent();
-                    parentEntity.Transform.Position = Entity.Transform.Position;
-                    Entity.Scene.Entities.Add(parentEntity);
-                }
+                projectile.Target = possibleTargets;
+                _availableProjectiles[projectile] += projectile.Cooldown;
+                var parentEntity = projectile.Entity.GetParent();
+                parentEntity.Transform.Position = Entity.Transform.Position;
+                Entity.Scene.Entities.Add(parentEntity);
             }
         }
 
@@ -78,7 +78,11 @@ namespace StrideSurvivor.Player
 
         private void OnPlayerLevelChanged()
         {
+            if (_secondProjectileActive)
+                return;
+
             // TODO: show screen with selection
+            _secondProjectileActive = true;
             var entity = SingleTargetProjectile.Instantiate()[0];
             var projectile = entity.GetChild(0).Get<BaseProjectile>(); // TODO: change hierarchy
             _availableProjectiles.Add(projectile, projectile.Cooldown);
@@ -106,6 +110,13 @@ namespace StrideSurvivor.Player
             }
 
             return nearest.Position;
+        }
+
+        private Vector3 GetRandomEnemyPosition()
+        {
+            int index = new Random().Next(CrowdController.Instance.Enemies.Count);
+
+            return CrowdController.Instance.Enemies[index].Position;
         }
     }
 }

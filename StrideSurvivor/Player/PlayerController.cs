@@ -22,6 +22,7 @@ namespace StrideSurvivor.Player
         public float MovementSpeed = 15f;
         public int HP = 10;
 
+        public float ExperienceCollectDistance = 1f;
         public LevelManager LevelManager { get; } = new LevelManager();
 
         public PlayerState CurrentState { get; private set; } = PlayerState.Alive;
@@ -125,18 +126,6 @@ namespace StrideSurvivor.Player
                 {
                     CrowdController.Instance.DestroyEnemy(enemy, withExperience: false);
                     TakeDamage(enemy.Damage);
-                }
-            }
-
-            foreach (Collision collision in _rigidbody.Collisions) // collisions don't work
-            {
-                var otherCollider = collision.ColliderA == _rigidbody ? collision.ColliderB : collision.ColliderA;
-                
-                if (otherCollider.Entity.Name == "Experience")
-                {
-                    // TODO: add animation
-                    otherCollider.Entity.SetParent(null);
-                    LevelManager.AddExperience();
                 }
             }
         }

@@ -67,6 +67,7 @@ Hierarchy:
                         Priority: 1
                         MovementSpeed: 40.0
                         HP: 10
+                        ExperienceCollectDistance: 0.5
                         LevelManager: {}
                     5ebd7dd4e899d4a86c0bb5da5b7cfaf9: !StrideSurvivor.SpriteAnimator,StrideSurvivor
                         Id: 79eee99f-6d4d-41a2-b17a-846a995daa8a
@@ -116,28 +117,6 @@ Hierarchy:
                                 Radius: 0.15
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    c8aeb9e1edac4509b42400babc21caa6: !RigidbodyComponent
-                        Id: c4626cad-3e1d-46c6-8cc9-e3938f23db36
-                        CollisionGroup: CharacterFilter
-                        CanCollideWith: CustomFilter2
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: true
-                        IsKinematic: false
-                        Mass: 1.0
-                        LinearDamping: 0.0
-                        AngularDamping: 0.0
-                        OverrideGravity: true
-                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
-                        NodeName: null
-                        ColliderShapes:
-                            00f23614a5091c081b287d54a5a6205c: !SphereColliderShapeDesc
-                                Is2D: true
-                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
         -   Entity:
                 Id: 7b0d2338-f7b5-47ad-b993-12af0686f209
                 Name: PlayerProjectileController
@@ -172,6 +151,7 @@ Hierarchy:
                         SpawnTime: 7
                         SpawnRange: {X: 2, Y: 4}
                         SpawnBox: {X: 6.0, Y: 3.0}
+                        ExperienceCollectSpeed: 3.0
         -   Entity:
                 Id: cf40c3e3-e14c-4f5e-ab1e-042945d2ac7d
                 Name: Directional light

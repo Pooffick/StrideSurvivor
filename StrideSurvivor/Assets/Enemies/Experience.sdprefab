@@ -22,20 +22,3 @@ Hierarchy:
                             Sheet: 86673d13-9d56-4294-9120-ba28debdd15c:Enemies/ExperienceSprite
                         Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
                         Sampler: PointClamp
-                    558f1befee3fa24d63ca2d4480b58812: !StaticColliderComponent
-                        Id: 145f5334-a998-4930-ba31-250174d84fff
-                        CollisionGroup: CustomFilter2
-                        CanCollideWith: CharacterFilter
-                        CanSleep: false
-                        Restitution: 0.0
-                        Friction: 0.5
-                        RollingFriction: 0.0
-                        CcdMotionThreshold: 0.0
-                        CcdSweptSphereRadius: 0.0
-                        IsTrigger: true
-                        AlwaysUpdateNaviMeshCache: false
-                        ColliderShapes:
-                            312a2306b3dd4d6603892025c2178f33: !SphereColliderShapeDesc
-                                Is2D: true
-                                Radius: 0.05
-                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
