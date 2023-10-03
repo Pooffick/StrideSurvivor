@@ -6,6 +6,7 @@ using Stride.Engine;
 using Stride.Graphics;
 using StrideSurvivor.Enemy;
 using StrideSurvivor.Projectile;
+using StrideSurvivor.UI;
 
 namespace StrideSurvivor.Player
 {
@@ -32,6 +33,9 @@ namespace StrideSurvivor.Player
 
         public override void Update()
         {
+            if (GameState.Instance.CurrentState != State.GameStarted)
+                return;
+
             Entity.Transform.Position = Player.WorldMatrix.TranslationVector;
 
             float time = (float)Game.UpdateTime.Total.TotalSeconds;

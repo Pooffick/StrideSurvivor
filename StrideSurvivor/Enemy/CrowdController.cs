@@ -7,6 +7,7 @@ using Stride.Physics;
 using System.Linq;
 using StrideSurvivor.Player;
 using Stride.Core;
+using StrideSurvivor.UI;
 
 namespace StrideSurvivor.Enemy
 {
@@ -39,6 +40,12 @@ namespace StrideSurvivor.Enemy
 
             while (Game.IsRunning && Player.CurrentState != PlayerState.Dead)
             {
+                if (GameState.Instance.CurrentState != State.GameStarted)
+                {
+                    await Script.NextFrame();
+                    continue;
+                }
+
                 _deltatTime = (float)Game.UpdateTime.Elapsed.TotalSeconds;
                 _playerPosition = Player.Entity.Transform.WorldMatrix.TranslationVector;
 

@@ -12,6 +12,8 @@ Hierarchy:
         - ref!! 7b0d2338-f7b5-47ad-b993-12af0686f209
         - ref!! 3b6fa7d0-61be-4265-b2a4-f185153de637
         - ref!! c30df0f5-a442-4c5a-9064-4bc1781bbb3a
+        - ref!! 509c3c77-6ba2-4308-94ac-0580f8f688c5
+        - ref!! acd8b3ed-75cb-411b-b826-7dd6fca04ebb
     Parts:
         -   Entity:
                 Id: 00760ffb-c336-4821-80af-b3b885056539
@@ -118,6 +120,19 @@ Hierarchy:
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
         -   Entity:
+                Id: 509c3c77-6ba2-4308-94ac-0580f8f688c5
+                Name: GameState
+                Components:
+                    2dbb522bd0997729f413cbd66188f0a5: !TransformComponent
+                        Id: e5ed5579-379f-4d8b-a102-34a1dace88d3
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    70b8aa408e1613e7993185e3f9f78ac6: !StrideSurvivor.UI.GameState,StrideSurvivor
+                        Id: fbd9a422-38bf-4ca8-ab94-16bddc8f0029
+                        MainMenu: ref!! acd8b3ed-75cb-411b-b826-7dd6fca04ebb
+        -   Entity:
                 Id: 7b0d2338-f7b5-47ad-b993-12af0686f209
                 Name: PlayerProjectileController
                 Components:
@@ -133,6 +148,21 @@ Hierarchy:
                         SingleTargetProjectile: e2edfbd4-e404-4cd5-9668-df2f26c2031f:Player/Projectiles/Charge2
                         Camera: ref!! a6d535be-3352-4739-9da2-5738a397e6c0
                         Player: ref!! 2ce05442-6866-41e1-bca6-23ac779bdc14
+        -   Entity:
+                Id: acd8b3ed-75cb-411b-b826-7dd6fca04ebb
+                Name: MainMenu
+                Components:
+                    2864eea802cbcb239844982b244b5b54: !TransformComponent
+                        Id: eff72f9c-b9ea-4233-b9cc-19b99aebc3b5
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    9d62fbb97bb46e6b250504b854b95405: !UIComponent
+                        Id: 6d72fdb9-5596-4064-8d79-634020b399ef
+                        Page: 9a02f78d-1508-427e-8459-c3131fd8bd39:UI/MainMenu
+                        Resolution: {X: 1280.0, Y: 720.0, Z: 1000.0}
+                        Size: {X: 1.28, Y: 0.72, Z: 1.0}
         -   Entity:
                 Id: c30df0f5-a442-4c5a-9064-4bc1781bbb3a
                 Name: CrowdController

@@ -3,6 +3,7 @@ using Stride.Engine;
 using Stride.Physics;
 using Stride.Core.Mathematics;
 using StrideSurvivor.Enemy;
+using StrideSurvivor.UI;
 
 namespace StrideSurvivor.Player
 {
@@ -38,6 +39,9 @@ namespace StrideSurvivor.Player
 
         public override void Update()
         {
+            if (GameState.Instance.CurrentState != State.GameStarted)
+                return;
+
             switch (CurrentState)
             {
                 case PlayerState.Dead:
