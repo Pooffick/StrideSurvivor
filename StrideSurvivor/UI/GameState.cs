@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Stride.Core.Mathematics;
-using Stride.Input;
-using Stride.Engine;
+﻿using Stride.Engine;
 using Stride.Core;
 using Stride.UI.Controls;
 using Stride.UI.Events;
@@ -25,6 +18,7 @@ namespace StrideSurvivor.UI
     public class GameState : StartupScript
     {
         private Button _exitButton;
+        private Button _startButton;
 
         public Entity MainMenu;
 
@@ -39,13 +33,21 @@ namespace StrideSurvivor.UI
 
             var mainMenuRoot = MainMenu.Get<UIComponent>().Page.RootElement;
             _exitButton = (Button)mainMenuRoot.FindName("ExitButton");
+            _startButton = (Button)mainMenuRoot.FindName("StartButton");
 
             _exitButton.Click += OnExitClick;
+            _startButton.Click += OnStartClick;
         }
 
         private void OnExitClick(object sender, RoutedEventArgs e)
         {
             ((GameBase)Game).Exit(); // Why IGame doesn't contain Exit()?
+        }
+
+        private void OnStartClick(object sender, RoutedEventArgs e)
+        {
+            MainMenu.Scene.Entities.Remove(MainMenu); // Kinda strange
+            CurrentState = State.GameStarted;
         }
     }
 }
